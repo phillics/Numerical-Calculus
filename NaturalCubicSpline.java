@@ -43,14 +43,17 @@ public class NaturalCubicSpline{
 		A[1] = f[1];
 		A[2] = f[2];
 
+		//step 1
 		for(int i = 0; i < n; i++){
 			h[i] = x[i+1] - x[i];
 		}
 
+		//step 2
 		for(int i = 1; i < n; i++){
 			a[i] = (3 / h[i]) * (A[i+1] - A[i]) - (3 / h[i-1]) * (A[i] - A[i-1]);
 		}
 
+		//step 3
 		l[0] = 1.0;
 		u[0] = z[0] = 0.0;
 
