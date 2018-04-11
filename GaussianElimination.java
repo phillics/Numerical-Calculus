@@ -4,6 +4,25 @@ E1:		a00 x1	+	a01 x2 	+	...	+	a0n-1	xn	=	a1,n+1
 E2:		a10 x1	+	a11 x2	+	...	+	a0n-1 xn	= 	a2,n+1
 ...										...			...
 En:		an-1,0	x1	+	an1	x2	+	...	+	ann	xn	=	an,n+1
+
+Display Solutions for X0, X1, ... Xn
+
+
+
+Gaussian Elimination with Backward Substitution
+	fastest and least accurate: the following methods make slight changes.
+	they are slightly slower, but can be much more accurate.
+
+Partial Pivoting:  find pivot value with largest absolute value
+	reduces rounding errors with very small input values: A[1][3] = 0.00000024
+	
+Scaled Pivoting:   find scale value for each row and use that in conjunction with pivot
+	reduces rounding errors when input values have very large range: 
+		A[1][2] = 3.13, A[2][3] = 340293539.38
+
+TODO::: 
+	* use Math.abs() when finding pivot, allows calculation with negative pivot values
+	* add Complete Pivoting, slower than partial and scaled, but also has smaller rounding error
 */
 
 
