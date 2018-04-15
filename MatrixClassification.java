@@ -31,12 +31,12 @@ public class MatrixClassification{
 		boolean diagonallyDominant = true;
 
 		for(int r = 0; r < A.length; r++)
-			for(int c = 0; c < A[0].length; c++)
-				if(A[r][r] <= A[r][c])
+			for(int c = 0; c < A[0].length; c++){
+				if(Math.abs(A[r][r]) <= Math.abs(A[r][c]))
 					strictlyDiagonallyDominant = false;
-				else if(A[r][r] < A[r][c])
+				if(Math.abs(A[r][r]) < Math.abs(A[r][c]))
 					diagonallyDominant = false;
-
+			}
 		if(strictlyDiagonallyDominant)
 			System.out.println("Strictly Diagonally Dominant");
 		else if(diagonallyDominant)
